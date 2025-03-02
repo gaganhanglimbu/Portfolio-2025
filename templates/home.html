@@ -1,0 +1,477 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+<!-- Hero section start -->
+<section class="bg-secondary position-relative pt-140 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="hero-content-wrapper">
+                    <span class="font-Syne text-dark fw-bold lh-1 text-2xl d-flex flex-wrap align-items-center hello-iam" data-aos="fade-right" data-aos-delay="300">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="65" height="2" viewBox="0 0 65 2" fill="none">
+                                <path d="M0 1H65" stroke="#080808" />
+                            </svg>
+                        </span>
+                        Hello, I’m
+                        <img src="{% static 'images/icon/victory.png' %}" alt="icon">
+                    </span>
+                    <h1 class="hero-title font-Syne fw-bold position-relative z-1 circle-shape" data-aos="fade-right" data-aos-delay="400">
+                        {{ user.first_name }}
+                        <!-- <br /> Henry -->
+                    </h1>
+                    <h2 class="hero-title font-Syne fw-bold mb-20" data-aos="fade-right" data-aos-delay="600">
+                        {{ user.last_name }}</h2>
+                    <p class="font-Syne fw-bold text-lg leading-tight iam-designer mb-30" data-aos="fade-right" data-aos-delay="800">
+                        {{ user.designation }} |
+                        Based in
+                        {{ user.country }}</p>
+                    <div class="d-flex flex-wrap hero-btn-wraper">
+                        <!-- Link Start -->
+                        <span data-aos="fade-right" data-aos-delay="1000">
+                            <a href="{% url 'contact-me' %}" class="d-flex align-items-center flex-wrap btn-primary">Let’s
+                                Talk
+                                <span class="animate-arrow-up">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </span>
+                        <!-- Link End -->
+                        <!-- Link Start -->
+                        <span data-aos="fade-right" data-aos-delay="1200">
+                            <a href="{% url 'my-project' %}" class="d-flex align-items-center flex-wrap btn-primary-outline">
+                                My Work
+                                <span class="animate-arrow-up">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </span>
+                        <!-- Link End -->
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center" data-aos="fade-right" data-aos-delay="1400">
+                        <div class="d-flex flex-wrap align-items-center">
+                            <span class="font-Syne text-dark fw-bold text-counter lh-1">
+                                <span class="counter">{{ user.total_project }}</span>+</span>
+                            <span class="text-worldwide text-lg">Project</span>
+                            <span class="mx-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2" height="14" viewBox="0 0 2 14" fill="none">
+                                    <path d="M1 0L1 14" stroke="#080808" stroke-opacity="0.4" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="social-links">
+                            <ul class="d-flex flex-wrap align-items-center list-unstyled">
+                               
+                                <li><a href="https://www.linkedin.com/in/gagan-limbu-83813b329/" class="text-dark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.94043 5.00002C6.94017 5.53046 6.7292 6.03906 6.35394 6.41394C5.97868 6.78883 5.46986 6.99929 4.93943 6.99902C4.409 6.99876 3.90039 6.78779 3.52551 6.41253C3.15062 6.03727 2.94016 5.52846 2.94043 4.99802C2.9407 4.46759 3.15166 3.95899 3.52692 3.5841C3.90218 3.20922 4.411 2.99876 4.94143 2.99902C5.47186 2.99929 5.98047 3.21026 6.35535 3.58552C6.73024 3.96078 6.9407 4.46959 6.94043 5.00002ZM7.00043 8.48002H3.00043V21H7.00043V8.48002ZM13.3204 8.48002H9.34043V21H13.2804V14.43C13.2804 10.77 18.0504 10.43 18.0504 14.43V21H22.0004V13.07C22.0004 6.90002 14.9404 7.13002 13.2804 10.16L13.3204 8.48002Z" fill="currentColor" fill-opacity="0.9"></path>
+                                        </svg>
+                                    </a></li>
+                                <li><a href="https://github.com/gaganhanglimbu" class="text-dark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C1.99977 14.0992 2.65958 16.1454 3.88679 17.8484C5.114 19.5515 6.84631 20.8249 8.83798 21.488C9.33798 21.575 9.52598 21.275 9.52598 21.012C9.52598 20.775 9.51298 19.988 9.51298 19.15C7.00098 19.613 6.35098 18.538 6.15098 17.975C6.03798 17.687 5.55098 16.8 5.12598 16.562C4.77598 16.375 4.27598 15.912 5.11298 15.9C5.90098 15.887 6.46298 16.625 6.65098 16.925C7.55098 18.437 8.98798 18.012 9.56298 17.75C9.65098 17.1 9.91298 16.663 10.201 16.413C7.97598 16.163 5.65098 15.3 5.65098 11.475C5.65098 10.387 6.03798 9.488 6.67598 8.788C6.57598 8.538 6.22598 7.513 6.77598 6.138C6.77598 6.138 7.61298 5.875 9.52598 7.162C10.3401 6.9364 11.1812 6.82302 12.026 6.825C12.876 6.825 13.726 6.937 14.526 7.162C16.439 5.862 17.276 6.138 17.276 6.138C17.826 7.513 17.476 8.538 17.376 8.788C18.013 9.488 18.401 10.375 18.401 11.475C18.401 15.313 16.064 16.163 13.839 16.413C14.201 16.725 14.514 17.325 14.514 18.263C14.514 19.6 14.501 20.675 14.501 21.013C14.501 21.275 14.689 21.587 15.189 21.487C17.1738 20.8166 18.8985 19.5408 20.1203 17.8389C21.3421 16.1371 21.9995 14.095 22 12C22 6.475 17.525 2 12 2H12.001Z" fill="currentColor" fill-opacity="0.9"></path>
+                                        </svg>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-md-block">
+        <img class="position-absolute top-0 end-0 hero-image" data-aos="fade-left" src="{{ user.profile_picture.url }}" alt="{{ user.first_name }}" height='788' width='767'>
+    </div>
+</section>
+<!-- Hero section end -->
+
+<!-- Service start -->
+<section class="py-120">
+    <div class="container">
+        <div class="row mb-12 align-items-center" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-12 col-lg-6">
+                <div class="fw-bold font-Syne lh-1 d-flex flex-wrap flex-column gap-y-2">
+                    <span class="text-warning text-xl">Services</span>
+                    <h3 class="text-dark section-title position-relative circle-shape">
+                        My specialties
+                    </h3>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p class="paragraph">
+                    Need to write something </p>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-12 col-xl-8">
+                <div class="row row-gap-24">
+                    <!-- service Item -->
+                    {% for service in service %}
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="service-card" data-aos="fade-up" data-aos-delay="1500">
+                            <!-- Icon -->
+                            <div class="d-flex flex-wrap align-items-center justify-content-center service-icon">
+                                <img src="{{ service.icon.url }}" alt='{{ service.title }}' height="24" width="24">
+                            </div>
+                            <!-- Icon End -->
+                            <h4>
+                                <a href="{% url 'my-project' %}" class="d-flex flex-wrap align-items-end justify-content-between fw-bold text-xl font-Syne service-card-link">
+                                    {{ service.title }}<br />
+                                    <span class="animate-arrow-up">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="transition-all" d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path class="transition-all" d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                    <!-- service Item End -->
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="col-12 col-xl-4" data-aos="zoom-in" data-aos-delay="1000">
+                <div class="bg-dark d-flex flex-wrap flex-column justify-content-between service-contact-card">
+                    <div class="d-flex flex-wrap justify-content-end">
+                        <a href="contact.html" class="animate-arrow-up">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.3333 56.6666L56.6667 23.3333" stroke="#FFB646" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M23.3333 23.3333H56.6667V56.6666" stroke="#FFB646" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column flex-wrap gap-y-2">
+                        <span class="text-warning text-lg fw-normal lh-1">SAY HELLO!</span>
+                        <h4 class="text-white text-2xl fw-bold font-Syne lh-1 say-hello-email">Contact me
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Service end -->
+
+
+
+
+<!-- About Us Sectin Start -->
+<section class="about-section pb-120" data-aos="zoom-out" data-aos-delay="800">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="position-relative">
+                    <img src="{{ user.profile_picture.url }}" alt="{{ user.first_name }}" height="609" width="531">
+                    <div class="d-flex flex-wrap flex-column position-absolute years-of-experience">
+                        <span class="years-experience-of-number text-dark fw-bold font-Syne leading-none d-inline-block position-relative">{{ user.experience }}+</span>
+                        <span class="strock-text">Years of <br /> experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 about-grid-space-right">
+                <div class="fw-bold font-Syne leading-none d-flex flex-wrap flex-column gap-y-2">
+                    <span class="text-warning text-xl">Hello I’m</span>
+                    <h3 class="section-title circle-shape text-dark position-relative">
+                        {{ user.first_name }} {{ user.last_name }}, {{ user.designation }}
+                    </h3>
+                    <h4 class="based-in-german-title text-dark">Based in {{ user.country }}</h4>
+                    <p class="paragraph mb-5">{{ user.description }}</p>
+                    <ul class="award-lists d-flex flex-wrap p-0 list-unstyled">
+                        <li class="award-lists-item">
+                            <span class="text-dark text-32 fw-bold font-Syne position-relative">{{ user.my_award_number }}</span>
+                            <p class="paragraph">Award winner</p>
+                        </li>
+                        
+                    </ul>
+                    <div class="d-flex flex-wrap">
+                        <a href="{{ user.resume.url }}" class="d-flex flex-wrap align-items-center btn-primary" download>Download my resume
+                            <span class="d-inline-block animate-arrow-up">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Us Sectin End -->
+
+
+
+<!-- tabs start -->
+<section class="featured-properties">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-5 col-2xl-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="fw-bold font-Syne leading-none d-flex flex-wrap flex-column gap-y-2 mb-4">
+                    <span class="text-warning text-xl">Resume</span>
+                    <h3 class="section-title circle-shape text-dark position-relative">
+                        All over my details find here...
+                    </h3>
+                </div>
+                <div class="tabs nav nav-pills flex-wrap flex-lg-column">
+                    <button data-bs-toggle="pill" data-bs-target="#about_me_tab" class="tab-btn justify-content-between align-items-center d-inline-flex active">
+                        About me
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="tab-btn tab-btn justify-content-between align-items-center d-inline-flex" data-bs-toggle="pill" data-bs-target="#experience_tab">
+                        Experience
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="tab-btn tab-btn justify-content-between align-items-center d-inline-flex" data-bs-toggle="pill" data-bs-target="#education_tab">
+                        Education
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="tab-btn tab-btn justify-content-between align-items-center d-inline-flex" data-bs-toggle="pill" data-bs-target="#skills_tab">
+                        Skills
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="tab-btn tab-btn justify-content-between align-items-center d-inline-flex" data-bs-toggle="pill" data-bs-target="#awards_tab">
+                        Awards
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 col-lg-7 col-2xl-8 featured-properties-space-left" data-aos="fade-up" data-aos-delay="600">
+                <div class="tab-content">
+                    <div id="about_me_tab" class="tab-pane fade show active position-relative">
+                        <div class="tab-contents">
+                            <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Based in {{ user.country}}
+                            </h4>
+                            <p class="paragraph mb-7">{{ user.first_name }} {{ user.last_name }}, <span class="text-dark">{{ user.designation }}</span>,
+                                <br>{{ user.description }}</p>
+                            
+                            <ul class="flex-column gap-3 d-inline-flex list-unstyled p-0">
+                                <li class="gap-10 d-inline-flex align-items-center">
+                                    <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                        Name</span>
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        {{ user.first_name }}{{ user.last_name }}</span>
+                                </li>
+                                <li class="gap-10 d-inline-flex align-items-center">
+                                    <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                        Nationality</span>
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        {{ user.country }}</span>
+                                </li>
+                                <li class="gap-10 d-inline-flex align-items-center">
+                                    <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                        Phone</span>
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        {{ user.mobile_number }}</span>
+                                </li>
+                                <li class="gap-10 d-inline-flex align-items-center">
+                                    <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                        Email</span>
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        {{ user.email }}</span>
+                                </li>
+                                <li class="gap-10 d-inline-flex align-items-center">
+                                    <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                        Experience</span>
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        {{ user.experience }} years</span>
+                                </li>
+                                <li class="gap-10 d-inline-flex align-items-center">
+                                    
+                                    <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                        Freelance</span>
+                                        {% if user.is_freelance %}
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        Available</span>
+                                    {% else %}
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        Not Available</span>
+                                        {% endif %}
+                                </li>
+                                
+                                <li class="gap-10 d-inline-flex align-items-center">
+                                    <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                        Language</span>
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        English</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="experience_tab" class="tab-pane fade position-relative">
+                        <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Experience</h4>
+                        <div class="tab-contents tab-contents-experience gap-x-4 gap-y-5">
+                            {% for experience in experience %}
+                            <div class="experience-tab-item d-flex flex-wrap flex-column gap-8 justify-content-between">
+                                <span class="text-sm fw-normal font-Inter leading-tight text-black-text-800">{{ experience.start_date }}
+                                    –
+                                    {% if experience.end_date %} {{ experience.end_date }} {% else %} Running {% endif %}</span>
+                                <div>
+                                    <p class="dot text-lg fw-normal font-sans leading-7 text-dark position-relative">
+                                        {{ experience.company_name }}</p>
+                                    <h4 class="fw-bold font-Syne leading-normal text-2xl text-dark">{{ experience.job }}
+                                    </h4>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="education_tab" class="tab-pane fade">
+                        <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Education</h4>
+                        <div class="education-tab-contents">
+                            {% for education in education %}
+                            <div class="education-tab-item d-flex flex-wrap">
+                                <span class="text-sm fw-normal font-Inter leading-tight text-black-text-800">{{ education.start_date }}
+                                    –
+                                    {% if education.end_date %} {{ education.end_date }} {% else %} Running {% endif %}</span>
+                                <div class="flex-1">
+                                    <p class="dot text-lg fw-normal font-sans leading-7 text-dark position-relative">
+                                        {{ education.college_name }}</p>
+                                    <h4 class="fw-bold font-Syne leading-normal text-2xl text-dark">{{ education.degree }}
+                                    </h4>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div id="skills_tab" class="tab-pane fade">
+                        <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Skills</h4>
+                        <div class="skills-tab-contents">
+                            {% for skill in skill %}
+                            <div class="d-flex flex-wrap gap-4 align-items-start skills-tab-item">
+                                <img class="items-start" src="{{ skill.skill_icon.url }}" alt="{{ skill.skill }}" height="54" width="54">
+                                <div class="flex flex-wrap gap-1 flex-1 flex-col">
+                                    <h4 class="fw-bold font-Syne leading-normal text-xl text-dark">{{ skill.skill }}</h4>
+                                    <p class="text-sm fw-normal font-Inter leading-none text-dark">({{ skill.percentage }}%)</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div id="awards_tab" class="tab-pane fade">
+                        <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Awards</h4>
+                        <div class="awards-tab-contents">
+                            {% for award in award %}
+                            <div class="d-flex flex-wrap flex-column awards-tab-item">
+                                <div class="d-flex align-items-start justify-content-between">
+                                    <img src="{{ award.award_icon.url }}" alt="{{ award.award_title }}" height="54", width="54">
+                                    <span class="fw-normal text-sm font-Inter text-black-text-800">{{ award.award_date }}</span>
+                                </div>
+                                <div>
+                                    <p class="dot text-lg fw-normal font-sans leading-7 text-dark position-relative">
+                                        {{ award.award_title }}</p>
+                                    <h4 class="fw-bold font-Syne leading-normal text-xl text-dark">{{ award.award_name }}
+                                    </h4>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                </div>
+                <span class="d-flex justify-content-end mt-14 -mr-3">
+                    <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M27.5625 0C27.5625 23.1273 9.1875 28.5455 0 27.8182C16.875 31.0909 25.3125 34.3636 27 54C27 40.3636 34.875 30.5455 54 27.8182C46.125 28.3636 29.8125 24 27.5625 0Z" fill="#FFB646" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- tabs end -->
+
+<!-- Portfolio Section Start -->
+<section class="bg-secondary py-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="400">
+                <div class="fw-bold font-Syne text-center leading-none d-flex flex-wrap flex-column gap-y-2 mb-10">
+                    <span class="text-warning text-xl">Portfolio</span>
+                    <h3 class="section-title text-dark">
+                        My recent <span class="position-relative circle-shape portfolio-shape">w</span>ork
+                    </h3>
+                </div>
+            </div>
+            {% for project in project %}
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                
+                <div class="rounded-20 overflow-hidden mb-6">
+                    <img src="{{ project.image.url }}" alt="project1">
+                </div>
+                <div class="d-flex flex-wrap flex-column gap-3">
+                    <div class="d-flex flex-wrap gap-2">
+                        {% for tag in project.tags.all %}
+                        <a class="text-xs fw-medium font-Inter leading-none px-4 rounded-40 portfolio-tag-link" href="{% url 'my-project' %}">{{ tag.tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center justify-content-between text-dark portfolio-title">
+                        <h4 class="fw-bold font-Syne text-center leading-10 portfolio-link">
+                            <a class="transition-all" href="{{ project.get_absolute_url }} ">{{ project.title }}</a>
+                        </h4>
+                        <a class="animate-arrow-up" href="{{ project.get_absolute_url }}">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M30.8839 9.11612C31.372 9.60427 31.372 10.3957 30.8839 10.8839L10.8839 30.8839C10.3957 31.372 9.60427 31.372 9.11612 30.8839C8.62796 30.3957 8.62796 29.6043 9.11612 29.1161L29.1161 9.11612C29.6043 8.62796 30.3957 8.62796 30.8839 9.11612Z" fill="currentColor" fill-opacity="0.9" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 10C12.5 9.30964 13.0596 8.75 13.75 8.75H30C30.6904 8.75 31.25 9.30964 31.25 10V26.25C31.25 26.9404 30.6904 27.5 30 27.5C29.3096 27.5 28.75 26.9404 28.75 26.25V11.25H13.75C13.0596 11.25 12.5 10.6904 12.5 10Z" fill="currentColor" fill-opacity="0.9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-12 mt-12" data-aos="fade-up" data-aos-delay="600">
+            <div class="d-flex">
+                <a href="{% url 'my-project' %}" class="d-flex align-items-center justify-content-center flex-wrap btn-primary flex-grow-1">
+                    View All Project
+                    <span class="inline-block ml-3 animate-arrow-up">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Portfolio Section End -->
+
+
+{% endblock content %}

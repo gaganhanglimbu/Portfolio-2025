@@ -1,0 +1,101 @@
+{% extends "_base.html" %}
+{% block title %} {{ project.title }} {% endblock title %}
+
+{% block content %}
+<!-- Hero Section Start -->
+<section class="bg-secondary pt-20" style="margin-top:84px">
+    <div class="max-w-1075 mx-auto banner-contents" data-aos="flip-down" data-aos-delay="300">
+        <div class="row pb-12">
+            <div class="col-12 col-lg-6 mb-10">
+                <ul class="d-flex flex-wrap text-sm fw-normal font-Inter leading-tight p-0 list-unstyled m-0 p-0 list-unstyled m-0">
+                    <li class="blog-meta-item">
+                        <a href="#">{{ project.category }}</a>
+                    </li>
+                    <li class="blog-meta-item">
+                        <a href="#">{{ project.created_at }}</a>
+                    </li>
+                </ul>
+                <h4 class="text-dark fw-bold font-Syne leading-snug banner-title">
+                    {{ project.title }}
+                </h4>
+            </div>
+            <div class="col-12 col-lg-6">
+                <ul class="d-flex flex-wrap gap-y-6 gy-lg-0 clients-info">
+                    
+                    <li class="d-flex flex-wrap flex-column gap-2 clients-info-item">
+                        <span class="clients-info-text text-sm fw-normal font-Inter leading-tight">Category</span>
+                        <h4 class="text-dark text-15 fw-bold font-sans leading-none">{{ project.category}}
+                        </h4>
+                    </li>
+                    <li class="d-flex flex-wrap flex-column gap-2 clients-info-item">
+                        <span class="clients-info-text text-sm fw-normal font-Inter leading-tight">Tools</span>
+                        <h4 class="text-dark text-15 fw-bold font-sans leading-none">
+                            {{ project.tools }}
+                        </h4>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row mb-12">
+            <div class="col-12">
+                <img class="w-full rounded-20" src="{{ project.image.url }}" alt="{{ project.title }}" height="580" width="1076" style="background:cover;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+<section class="bg-white pb-120 project-details-section">
+    <div class="max-w-1075 mx-auto banner-contents">
+        <div class="grid grid-cols-1">
+            <h3 class="text-32 fw-bold font-Syne leading-10 mb-4">Overview</h3>
+            <p class="paragraph mb-12">{{ project.overview }}</p>
+            
+            
+        </div>
+        
+</section>
+<!-- Project Section Start -->
+<section class="bg-white pb-120">
+    <div class="container">
+        <div class="row mb-n6">
+            <div class="col-12" data-aos="flip-down" data-aos-delay="400">
+                <div class="fw-bold font-Syne text-center leading-none d-flex flex-wrap flex-column gap-y-2 mb-10">
+                    <span class="text-warning text-xl">Portfolio</span>
+                    <h3 class="section-title text-dark">
+                        Related <span class="position-relative circle-shape portfolio-shape">wo</span>rk
+                    </h3>
+                </div>
+            </div>
+            {% for related_project in related_projects %}
+            <div class="col-12 col-md-6 mb-6" data-aos="flip-down">
+                <div class="rounded-20 overflow-hidden mb-6">
+                    <img src="{{ related_project.image.url }}" alt="{{ related_project.title }}" height="380" width="636" style="background:cover;">
+                </div>
+                <div class="d-flex flex-wrap flex-column gap-3">
+                    <div class="d-flex flex-wrap gap-2">
+                        {% for tag in related_project.tags.all %}
+                        <a class="text-xs fw-medium font-Inter leading-none px-4 rounded-40 portfolio-tag-link">{{ tag.tag}}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center justify-content-between text-dark portfolio-title">
+                        <h4 class="fw-bold font-Syne text-center leading-10 portfolio-link">
+                            <a class="transition-all" href="{{ related_project.get_absolute_url }}">{{ related_project.title }}</a>
+                        </h4>
+                        <a class="animate-arrow-up" href="{{ related_project.get_absolute_url }}">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M30.8839 9.11612C31.372 9.60427 31.372 10.3957 30.8839 10.8839L10.8839 30.8839C10.3957 31.372 9.60427 31.372 9.11612 30.8839C8.62796 30.3957 8.62796 29.6043 9.11612 29.1161L29.1161 9.11612C29.6043 8.62796 30.3957 8.62796 30.8839 9.11612Z" fill="currentColor" fill-opacity="0.9" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 10C12.5 9.30964 13.0596 8.75 13.75 8.75H30C30.6904 8.75 31.25 9.30964 31.25 10V26.25C31.25 26.9404 30.6904 27.5 30 27.5C29.3096 27.5 28.75 26.9404 28.75 26.25V11.25H13.75C13.0596 11.25 12.5 10.6904 12.5 10Z" fill="currentColor" fill-opacity="0.9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+<!-- Project Section End -->
+
+{% endblock content %}

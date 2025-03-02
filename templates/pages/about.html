@@ -1,0 +1,270 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %} About {% endblock title %}
+
+{% block content %}
+<!-- About Me Sectin Start -->
+<section class="bg-secondary pt-20 pb-120" data-aos="zoom-in" style="margin-top:84px">
+    <div class="container">
+        <div class="about-grid">
+            <img class="mx-auto" src="{{ user.profile_picture.url }}" alt="{{ user.first_name }}">
+            <div class="fw-bold font-Syne leading-none d-flex flex-wrap flex-column gap-y-2">
+                <span class="text-warning text-xl">About me</span>
+                <h3 class="text-dark section-title">
+                    {{ user.first_name }} {{ user.last_name }}
+                </h3>
+                <h4 class="text-dark text-2xl mt-3 mb-4">{{ user.designation }}</h4>
+                
+                <p class="paragraph mb-6">
+                    {{ user.description }}</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Me Sectin End -->
+<!-- Experience Sectin Start -->
+<section class="bg-white py-120 overflow-x-hidden">
+    <div class="container" data-aos="zoom-out">
+        <div class="about-grid-section-two">
+            <div class="fw-bold font-Syne leading-none d-flex flex-wrap flex-column gap-y-2">
+                <h3 class="text-dark section-title mb-5">
+                    My vision is to create happy my clients
+                </h3>
+                <p class="paragraph mb-7">
+                    That is where I come in. A lover of words, a wrangler of copy. Here to create copy that not
+                    only reflects who you are and what you stand for, but words that truly land with those that
+                    read them, calling your audience in and making them want more.
+                </p>
+                <ul class="award-lists d-flex flex-wrap p-0 list-unstyled">
+                    <li class="award-lists-item">
+                        <span class="text-dark text-32 fw-bold font-Syne position-relative">08</span>
+                        <p class="paragraph">Award winner</p>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="d-flex flex-column justify-content-end">
+                <div class="d-flex flex-wrap flex-column years-of-experience mb-12">
+                    <span class="years-experience-of-number text-dark fw-bold font-Syne leading-none d-inline-block position-relative">{{ user.experience }}+</span>
+                    <span class="strock-text">Years of <br> experience</span>
+                </div>
+                <div class="bg-dark d-flex flex-wrap justify-content-between align-items-end say-hello-contact-box">
+                    <div class="d-flex flex-column flex-wrap gap-y-2">
+                        <span class="text-warning text-lg fw-normal leading-none">SAY HELLO!</span>
+                        <h4 class="text-white text-2xl fw-bold font-Syne leading-none mb-0">
+                            {{ user.email }}
+                        </h4>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-end">
+                        <a href="{% url 'contact-me' %}" class="animate-arrow-up">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 34L34 14" stroke="#FFB646" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14 14H34V34" stroke="#FFB646" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Experience Sectin End -->
+<!-- tabs start -->
+<section class="featured-properties">
+    <div class="container" data-aos="zoom-out" data-aos-delay="800">
+        <div class="row">
+            <div class="col-12">
+                <div class="fw-bold font-Syne text-center leading-none d-flex flex-wrap flex-column gap-y-2 mb-4">
+                    <span class="text-warning text-xl">Resume</span>
+                    <h3 class="section-title text-dark mb-0">All over my details find he<span class="d-inline-block position-relative circle-shape portfolio-shape2">re.</span>..
+                    </h3>
+                </div>
+                <div class="tabs nav nav-pills flex-wrap justify-content-center gap-4 mt-8 mb-14">
+                    <button data-bs-toggle="pill" data-bs-target="#about_me_tab" class="tab-btn justify-content-between align-items-center d-inline-flex active">
+                        About me
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="tab-btn tab-btn justify-content-between align-items-center d-inline-flex" data-bs-toggle="pill" data-bs-target="#experience_tab">
+                        Experience
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="tab-btn tab-btn justify-content-between align-items-center d-inline-flex" data-bs-toggle="pill" data-bs-target="#education_tab">
+                        Education
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="tab-btn tab-btn justify-content-between align-items-center d-inline-flex" data-bs-toggle="pill" data-bs-target="#skills_tab">
+                        Skills
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="tab-btn tab-btn justify-content-between align-items-center d-inline-flex" data-bs-toggle="pill" data-bs-target="#awards_tab">
+                        Awards
+                        <span class="inline-block animate-arrow-up">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7 7H17V17" stroke="currentColor" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="tab-content">
+                    <div id="about_me_tab" class="tab-pane fade show active position-relative">
+                        <div class="about-me-grid">
+                            <img src="{{ user.profile_picture.url }}" alt="{{ user.first_name }}" height="496" width="526">
+                            <div>
+                                <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Based in
+                                    {{ user.country }}
+                                </h4>
+                                <p class="paragraph mb-7">{{ user.first_name}} {{ user.last_name}}, <span class="text-dark">{{ user.designation}}</span>,
+                                    based
+                                    in
+                                    {{ user.country }}.</p>
+                                <p class="paragraph mb-14">{{ user.description }}</p>
+                                <ul class="flex-column gap-3 d-inline-flex list-unstyled p-0">
+                                    <li class="gap-10 d-inline-flex align-items-center">
+                                        <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                            Name</span>
+                                        <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                            {{ user.first_name}} {{ user.last_name}}</span>
+                                    </li>
+                                    <li class="gap-10 d-inline-flex align-items-center">
+                                        <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                            Nationality</span>
+                                        <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                            {{ user.country }}</span>
+                                    </li>
+                                    <li class="gap-10 d-inline-flex align-items-center">
+                                        <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                            Phone</span>
+                                        <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                            {{ user.mobile_number }}</span>
+                                    </li>
+                                    <li class="gap-10 d-inline-flex align-items-center">
+                                        <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                            Email</span>
+                                        <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                            {{ user.email }}</span>
+                                    </li>
+                                    <li class="gap-10 d-inline-flex align-items-center">
+                                        <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                            Experience</span>
+                                        <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                            {{ user.experience }} years</span>
+                                    </li>
+                                    <li class="gap-10 d-inline-flex align-items-center">
+                                        <span class="w-110px text-black-text-800 text-lg fw-normal leading-none">
+                                            Freelance</span>
+                                        {% if user.is_freelance %}
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        Available</span>
+                                    {% else %}
+                                    <span class="text-dark text-2xl fw-bold font-Syne leading-8">
+                                        Not Available</span>
+                                        {% endif %}
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="experience_tab" class="tab-pane fade position-relative">
+                        <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Experience</h4>
+                        <div class="tab-contents tab-contents-experience gap-x-4 gap-y-5">
+                            {% for experience in experience %}
+                            <div class="experience-tab-item d-flex flex-wrap flex-column gap-8 justify-content-between">
+                                <span class="text-sm fw-normal font-Inter leading-tight text-black-text-800">{{ experience.start_date }}
+                                    –
+                                    {{ experience.end_date }}</span>
+                                <div>
+                                    <p class="dot text-lg fw-normal font-sans leading-7 text-dark position-relative">
+                                        {{ experience.company_name }}</p>
+                                    <h4 class="fw-bold font-Syne leading-normal text-2xl text-dark">{{ experience.job }}
+                                    </h4>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="education_tab" class="tab-pane fade">
+                        <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Education</h4>
+                        <div class="education-tab-contents">
+                            {% for education in education %}
+                            <div class="education-tab-item d-flex flex-wrap">
+                                <span class="text-sm fw-normal font-Inter leading-tight text-black-text-800">{{ education.start_date}}
+                                    –
+                                    {{ education.end_date }}</span>
+                                <div class="flex-1">
+                                    <p class="dot text-lg fw-normal font-sans leading-7 text-dark position-relative">
+                                        {{ education.college_name}}</p>
+                                    <h4 class="fw-bold font-Syne leading-normal text-2xl text-dark">{{ education.degree }}
+                                    </h4>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="skills_tab" class="tab-pane fade">
+                        <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Skills</h4>
+                        <div class="skills-tab-contents">
+                            {% for skill in skill %}
+                            <div class="d-flex flex-wrap gap-4 align-items-start skills-tab-item">
+                                <img class="items-start" src="{{ skill.skill_icon.url }}" alt="{{ skill.skill }}" height="54" width="54">
+                                <div class="flex flex-wrap gap-1 flex-1 flex-col">
+                                    <h4 class="fw-bold font-Syne leading-normal text-xl text-dark">{{ skill.skill }}</h4>
+                                    <p class="text-sm fw-normal font-Inter leading-none text-dark">({{ skill.percentage }}%)</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div id="awards_tab" class="tab-pane fade">
+                        <h4 class="text-dark text-2xl based-in-german-title-tab fw-bold font-Syne">Awards</h4>
+                        <div class="awards-tab-contents">
+                            {% for award in award %}
+                            <div class="d-flex flex-wrap flex-column awards-tab-item">
+                                <div class="d-flex align-items-start justify-content-between">
+                                    <img src="{{ award.award_icon.url }}" alt="{{ award.award_title }}" height="54" width="54">
+                                    <span class="fw-normal text-sm font-Inter text-black-text-800">{{ award.award_date}}</span>
+                                </div>
+                                <div>
+                                    <p class="dot text-lg fw-normal font-sans leading-7 text-dark position-relative">
+                                        {{ award.award_title}}</p>
+                                    <h4 class="fw-bold font-Syne leading-normal text-xl text-dark">{{ award.award_name }}
+                                    </h4>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- tabs end -->
+
+{% endblock content %}

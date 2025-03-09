@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from django.contrib.auth import get_user_model
 
 def main():
     """Run administrative tasks."""

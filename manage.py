@@ -19,11 +19,7 @@ def main():
         password = os.getenv("DJANGO_SUPERUSER_PASSWORD")
         
         if username and email and password:
-            if not User.objects.filter(username=username).exists():
-                User.objects.create_superuser(username=username, email=email, password=password)
-                print("Superuser created successfully.")
-            else:
-                print("Superuser already exists.")
+            User.objects.create_superuser(username=username, email=email, password=password)
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "

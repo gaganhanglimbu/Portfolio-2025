@@ -17,8 +17,9 @@ def main():
         username = os.getenv("DJANGO_SUPERUSER_USERNAME")
         email = os.getenv("DJANGO_SUPERUSER_EMAIL")
         password = os.getenv("DJANGO_SUPERUSER_PASSWORD")
-        
+        print(username, email, password)
         if username and email and password:
+            
             User.objects.create_superuser(username=username, email=email, password=password)
     except ImportError as exc:
         raise ImportError(

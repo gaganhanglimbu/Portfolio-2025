@@ -3,10 +3,13 @@
 import os
 import sys
 from django.contrib.auth import get_user_model
+import django
 
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
+    django.setup()
+
     try:
         from django.core.management import execute_from_command_line
         User = get_user_model()
